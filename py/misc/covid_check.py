@@ -65,7 +65,7 @@ def check_symptom_list(symptom_list, randomize, threshold):
                 score += response
 
     #return the collected responses (in a list)
-    return response_list
+    return response_list, score
 
 def generate_report(symptoms, response):
     #   
@@ -163,7 +163,7 @@ if(len(sys.argv) > 2) :
 # Collect user response
 #
 print("Please answer Yes/No to the below symptoms")
-response = check_symptom_list(symptoms, randomize_questions, threshold)
+response, score = check_symptom_list(symptoms, randomize_questions, threshold)
 
 #
 #Generate Report
@@ -179,12 +179,6 @@ generate_report(symptoms, response)
 #Calculate score
 #
 print("------------------------------")
-
-score = 0 
-for resp in response:
-    if(resp > 0): 
-        score += resp
-
 print("Score : {0}".format(score))
 
 #
