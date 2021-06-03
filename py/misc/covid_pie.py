@@ -27,22 +27,40 @@ def generate_report(cases, country, title):
     plt.show() 
     """
     i = 0
+    #find the max length of country names for alligning
+    max_len = 0
+    for c in country:
+        length = len(c)
+        if length > max_len:
+            max_len = length
+
     while i < len(country):
-        #TODO : Lets make it prettier : Align them
-        print("{0} : {1} : {2}".format(country[i], cases[i], case_pc[i]))
+        print("{0} : {1} : {2}".format(country[i].rjust(max_len+2), 
+                                str(cases[i]).rjust(12), 
+                                case_pc[i]))
         i += 1
 
 
-country = ["Americas", 
-            "Europe", 
-            "South East Asia", 
-            "Eastern Mediterranean"]
+country = ["Americas",
+            "Europe",
+            "South East Asia",
+            "Eastern Mediterranean",
+           "Western Pacific",
+           "U.S.",
+           "India",
+           "Brazil",
+           "France",
+           "Turkey",
+           "Russia",
+           "U.K."]
 
-cases = [67472965, 
-        54288252, 
-        31923614, 
-        10134399]
-
+cases = [67472965,
+        54288252,
+        31923614,
+        10134399,3055683,
+         32942677,28307832,
+         16545554,5575650,
+         5256516,5090249,4490442]
 
 generate_report(cases, country, "Countries")
 
