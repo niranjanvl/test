@@ -31,14 +31,24 @@ print(num_list)
 
 max = num_list[0]
 min = num_list[0]
+positive = 0
+negative = 0
 for n in num_list:
     if max < n:
         max = n
     elif min > n:
         min = n
 
+    if(n >= 0) :
+        positive += 1
+    else:
+        negative += 1
+
 print("max : {0}".format(max))
 print("min : {0}".format(min))
+print("+ve : {0}".format(positive))
+print("-ve : {0}".format(negative))
+
 
 
 

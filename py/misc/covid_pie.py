@@ -41,6 +41,7 @@ def generate_report(cases, country, title):
         i += 1
 
 
+
 country = ["Americas",
             "Europe",
             "South East Asia",
