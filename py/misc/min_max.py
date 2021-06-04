@@ -34,9 +34,9 @@ min = num_list[0]
 positive = 0
 negative = 0
 for n in num_list:
-    if max < n:
+    if n > max:
         max = n
-    elif min > n:
+    elif n < min:
         min = n
 
     if(n >= 0) :
