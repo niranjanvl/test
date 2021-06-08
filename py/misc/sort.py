@@ -47,8 +47,8 @@ while i < len(values):
             values[j] = values[i]
             values[i] = min
             if DEBUG:
-                print("> {0}, i : {1}, j : {2}, min : {3}".format(
-                    values, i, j, min))
+                print("> {0}, i : {1}, j : {2}, min : {3} <> {4}".format(
+                    values, i, j, min, values[j]))
 
         j += 1
     i += 1
