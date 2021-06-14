@@ -1,0 +1,25 @@
+idly,20
+dosa,20
+vada,30
+upma,20
+chow chow bath,30
+poori,40
+puri,40
+kesari bath,50
+bisi bele bath,50
+shavige bath,40
+pulav,50
+biriyani,50
+champakali,30
+curd rice,30
+rasagulla,60
+ice cream,40
+mangalore bun,30
+kadamba,30
+puliyogare,30
+vangi bath,30
+south indian meal,60
+north indian meal,60
+roti,60
+parota,50
+naan,50
