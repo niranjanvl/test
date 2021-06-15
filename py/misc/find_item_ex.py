@@ -33,33 +33,43 @@ def load_data(file_name):
 
 def find_item(item_list, item):
     #find if the item is present in the item list.
-    found = False
+    entry = None
     for x in item_list:
+        temp = x.split(',')
         #compare case insensitively to tollerate mixed case
-        if (x.lower() == item.lower()):
-            found = True
+        if (temp[0].lower() == item.lower()):
             #we can stop looking if already found
+            entry = temp
             break
 
-    return found
+    return entry
 
 
 #populate item_list with the content from the given file
 item_list = load_data(file_name)
 print(item_list)
+selected_items = []
 
 while(True):
     #read input from the console.
     # use input if using python 3 instead of raw_input
     item = raw_input('Enter item for lookup : ')
     if(len(item) > 0):
-        if(find_item(item_list, item)):
-            print('Available')
+        entry = find_item(item_list, item)
+        if(entry != None):
+            print('Available.\n Item : {0}, Price : {1}'.format(
+                    entry[0], entry[1]))
+            selected_items.append(entry)
         else:
             if(item.lower() == 'q'):  #quit if user gave q
-            #if(len(item) == 0):  #quit if user gave q
-                exit(0)
+                break
             else:
                 print('Not Available')
+
+#print the summary
+# All the selected items and 
+# total amount
+if(len(selected_items) > 0):
+    print("Selected Items : \n{0}".format(selected_items))
 
 
