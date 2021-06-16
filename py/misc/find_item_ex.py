@@ -4,6 +4,9 @@ An interactive program that takes a list of items
 Then user can interactively query 
  if a specific item exists in the list of not.
 
+Ignore case while comparing
+Ignore spaces while comparing
+
 e.g.,
 
 find_item.py   Kichidi  idly  "jeera rice" pulav biriyani roti dosa
@@ -31,13 +34,26 @@ def load_data(file_name):
     #return the split lines as alist
     return file.read().splitlines()
 
+def remove_spaces(x):
+    res = ''
+    for char in x:
+        if(char != ' '):
+            res += char
+    return res
+
+def compare_item(x, y):
+    #compare items 
+    #ignore case 
+    #ignore spaces
+    return remove_spaces(x.lower()) == remove_spaces(y.lower())
+
 def find_item(item_list, item):
     #find if the item is present in the item list.
     entry = None
     for x in item_list:
         temp = x.split(',')
         #compare case insensitively to tollerate mixed case
-        if (temp[0].lower() == item.lower()):
+        if (compare_item(temp[0], item)):
             #we can stop looking if already found
             entry = temp
             break
@@ -74,11 +90,11 @@ if(len(selected_items) > 0):
     print("Selected Items :")
     for item in selected_items:
         total += int(item[1])
-        print("{0} : {1}".format(item[0].rjust(16), 
+        print("{0} : {1}".format(item[0].rjust(25), 
             item[1].rjust(5)))
     
     print("-----------------------------")
-    print("{0} : {1}".format("total".rjust(16), 
+    print("{0} : {1}".format("total".rjust(25), 
         str(total).rjust(5)))
 
 
