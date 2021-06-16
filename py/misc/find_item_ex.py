@@ -25,7 +25,7 @@ file_name = sys.argv[1]
 print(file_name)
 
 def load_data(file_name):
-    #open the fil
+    #open the file and load the contents 
     file = open(file_name)
     #read the contents and split each line
     #return the split lines as alist
@@ -71,6 +71,7 @@ while(True):
 # total amount
 total = 0
 if(len(selected_items) > 0):
+    print("Selected Items :")
     for item in selected_items:
         total += int(item[1])
         print("{0} : {1}".format(item[0].rjust(16), 
