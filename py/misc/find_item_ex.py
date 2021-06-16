@@ -69,11 +69,15 @@ while(True):
 #print the summary
 # All the selected items and 
 # total amount
+total = 0
 if(len(selected_items) > 0):
     for item in selected_items:
-        print("{0} : {1}".format(item[0].rjust(16), item[1]))
+        total += int(item[1])
+        print("{0} : {1}".format(item[0].rjust(16), 
+            item[1].rjust(5)))
     
-    print("----------")
-    print("{0} : {1}".format("total".rjust(16), 0))
+    print("-----------------------------")
+    print("{0} : {1}".format("total".rjust(16), 
+        str(total).rjust(5)))
 
 
