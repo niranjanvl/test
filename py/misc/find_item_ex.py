@@ -55,7 +55,10 @@ def find_item(item_list, item):
         #compare case insensitively to tollerate mixed case
         if (compare_item(temp[0], item)):
             #we can stop looking if already found
-            entry = temp
+            entry = {
+                        'item' : temp[0],
+                        'price' : temp[1]
+                    }
             break
 
     return entry
@@ -74,17 +77,17 @@ while(True):
         entry = find_item(item_list, item)
         if(entry != None):
             print('Available.\n Item : {0}, Price : {1}'.format(
-                    entry[0], entry[1]))
+                    entry['item'], entry['price']))
             #Check if the selected item is already in our dict
             #if not present - then add an new entry with count:1
             #if alreaedy present - then just increment the count
-            if not selected_items.has_key(entry[0]):
-                selected_items[entry[0]] = {
+            if not selected_items.has_key(entry['item']):
+                selected_items[entry['item']] = {
                             'count' : 1,
-                            'price' : entry[1]
+                            'price' : entry['price']
                         }
             else:
-                selected_items[entry[0]]['count'] += 1
+                selected_items[entry['item']]['count'] += 1
         else:
             if(item.lower() == 'q'):  #quit if user gave q
                 break
