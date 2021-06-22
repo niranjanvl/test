@@ -81,7 +81,7 @@ while(True):
             #Check if the selected item is already in our dict
             #if not present - then add an new entry with count:1
             #if alreaedy present - then just increment the count
-            if not selected_items.has_key(entry['item']):
+            if not ( entry['item'] in selected_items.keys() ):
                 selected_items[entry['item']] = {
                             'count' : 1,
                             'price' : entry['price']
