@@ -64,7 +64,7 @@ def find_item(item_list, item):
 #populate item_list with the content from the given file
 item_list = load_data(file_name)
 print(item_list)
-selected_items = []
+selected_items = {}
 
 while(True):
     #read input from the console.
@@ -75,7 +75,16 @@ while(True):
         if(entry != None):
             print('Available.\n Item : {0}, Price : {1}'.format(
                     entry[0], entry[1]))
-            selected_items.append(entry)
+            #Check if the selected item is already in our dict
+            #if not present - then add an new entry with count:1
+            #if alreaedy present - then just increment the count
+            if not selected_items.has_key(entry[0]):
+                selected_items[entry[0]] = {
+                            'count' : 1,
+                            'price' : entry[1]
+                        }
+            else:
+                selected_items[entry[0]]['count'] += 1
         else:
             if(item.lower() == 'q'):  #quit if user gave q
                 break
@@ -88,13 +97,18 @@ while(True):
 total = 0
 if(len(selected_items) > 0):
     print("Selected Items :")
-    for item in selected_items:
-        total += int(item[1])
-        print("{0} : {1}".format(item[0].rjust(25), 
-            item[1].rjust(5)))
+    for item in selected_items.items():
+        name = item[0]
+        count = item[1]['count']
+        price = int(item[1]['price'])*count
+        total += price
+        print("{0}({1}) : {2}".format(name.rjust(25), 
+            str(count).rjust(2),
+            str(price).rjust(5))
+            )
     
     print("-----------------------------")
-    print("{0} : {1}".format("total".rjust(25), 
+    print("{0} : {1}".format("total".rjust(29), 
         str(total).rjust(5)))
 
 
