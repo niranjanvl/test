@@ -32,20 +32,22 @@ if len(sys.argv) != 3:
     print("Invalid input")
     printUsageAndExit()
 
-operand1 = int(sys.argv[1])
-operand2 = int(sys.argv[2])
+numerator = int(sys.argv[1])
+denominator = int(sys.argv[2])
 
-if (operand1 == 0) or (operand2 == 0):
+if (numerator == 0) or (denominator == 0):
     print("Invalid input")
     printUsageAndExit()
 
-if operand1 < operand2:
-    temp = operand1
-    operand1 = operand2
-    operand2 = temp
+#Ensure the Numerator is >= Denominator
+if numerator < denominator:
+    #swap
+    temp = numerator
+    numerator = denominator
+    denominator = temp
 
-if operand1 % operand2 == 0:
-    print("{0} is divisible by {1}".format(operand1,operand2))
+if numerator % denominator == 0:
+    print("{0} is divisible by {1}".format(numerator,denominator))
 else:
-    print("{0} is not divisible by {1}".format(operand1,operand2))
+    print("{0} is not divisible by {1}".format(numerator,denominator))
 
