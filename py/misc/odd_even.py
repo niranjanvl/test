@@ -10,8 +10,8 @@
 #---------------------
 import sys
 
-values = sys.argv[1:]
-
+def printUsage():
+    print("Usage:\n\todd_even.py <integer> <integer> ...")
 
 def odd_even(v):
     #Check if v is a number
@@ -27,8 +27,12 @@ def odd_even(v):
         else:
             print("{0} : Odd".format(v))
 
+values = sys.argv[1:]
 
-for v in values:
-    odd_even(v)
+if(len(values) == 0):
+    printUsage()
+else:
+    for v in values:
+        odd_even(v)
 
 
