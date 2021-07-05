@@ -34,7 +34,23 @@ values = sys.argv[1:]
 if len(values) == 0:
 	printUsageAndExit()
 
-#TODO
+result = ""
+for v in values:
+    result += v[-1::-1] + " "
+
+print("{0} ".format(result))
+
+'''
+# python 2
+for v in values:
+   print(v[-1::-1]),
+'''
+
+'''
+# python 3
+for v in values:
+   print(v[-1::-1], end=" ")
+'''
 
 
 
