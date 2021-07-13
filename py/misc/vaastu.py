@@ -225,14 +225,16 @@ if(yoga_varga in inauspicious_yoga_list):
 #Aaya Varga Classification
 #
 aaya_varga_ip = [
-        "Kakaya",
-        "Dwajaya",
-        "Dhoomraya",
-        "Simhaya",
-        "Shunakaya",
-        "Vrushabaya",
-        "Kharaya",
-        "Gajaya" ]
+        None, #0
+        "Dwajaya", #1
+        "Dhoomraya", #2
+        "Simhaya", #3
+        "Shunakaya", #4
+        "Vrushabaya", #5
+        "Kharaya", #6
+        "Gajaya", #7
+        "Kakaya"
+        ]
 print("Aaya Varga({0}) is  {1}".format(aaya_varga, 
                                 aaya_varga_ip[aaya_varga]))
 
@@ -272,6 +274,56 @@ if(amsha_varga_ip[amsha_varga] != "Good"):
 	print("Amsha Varga({0}) is {1}".format(
 			amsha_varga,
 			amsha_varga_ip[amsha_varga]))
+
+
+
+
+#
+# Dikhpathi Varga
+#
+dikhpathi_varga_ip = [
+		None,   #0
+		"Indra", #1
+		"Agni", #2
+		"Yama", #3
+		"Nirruti", #4
+		"Varuna", #5
+		"Aayu", #6
+		"Kubhera", #7
+		"Eeshana", #8
+	]
+
+
+auspicious_dikpathi_list = [ 1,5 ]
+if( dikhpathi_varga in auspicious_dikpathi_list ):
+    print("Dikhpathi Varga({0}) is very auspicious.".
+            format(dikhpathi_varga_ip[dikhpathi_varga]))
+
+
+#
+# Karana Varga
+#
+
+karana_varga_ip = [
+            None, #0
+            "Bhava", #1
+            "Balava", #2
+            "Kaulava", #3
+            "Thaitale", #4
+            "Garaje", #5
+            "Vanik", #6
+            "Bhadre", #7
+            "Shakuni", #8
+            "Chatushpath", #9
+            "Naagavaan", #10
+            "Kimstughna", #11
+        ]
+
+auspicious_karana_varga = [ 1, 2, 3, 4 ]
+
+if(karana_varga not in auspicious_karana_varga):
+    print("Karana Varaga({0}) is inauspicious !!!".
+            format(karana_varga_ip[karana_varga]))
 
 
 
