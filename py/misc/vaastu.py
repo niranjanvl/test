@@ -22,7 +22,6 @@ Construction Area  : CA
     15.Dikhpathi Varga : (CA x 9) % 8
     16.Karana Varga    : (CA x 5) % 11
 
-
 Aayu Varga : if the value is < 60, then Alert (danger).
 Aaya Varga : if the value is == 
                 1 : then Dwajaya.
@@ -45,17 +44,30 @@ Construction Area (CA) : 21x29
 '''
 
 import sys
+from colorama import Fore
 
-if(len(sys.argv) < 3):
-    print("Usage :\n\tvaastu.py <width> <depth>")
+if(len(sys.argv) < 5):
+    print("Usage :\n\tvaastu.py <building width> <building depth> <site width> <site depth>")
     exit(0)
 
 ca_width = int(sys.argv[1])
 ca_depth = int(sys.argv[2])
 
+sa_width = int(sys.argv[3])
+sa_depth = int(sys.argv[4])
+
 ca = ca_width * ca_depth
+sa = sa_width * sa_depth
 
 print("Total CA : {0}".format(ca))
+print("Total SA : {0}".format(sa))
+set_back = (sa - ca)*100.0/(sa)
+
+if( ca == sa ):
+    print("Not recommended as there is no Set Back")
+elif (set_back < 20):
+    print("Not recommended as the Set Back is < 20%")
+
 
 #01.Dhana Varga     : (CA x 8) % 12
 #02.Runa Varha      : (CA x 3) % 8 
@@ -82,59 +94,59 @@ def ret_default_if_zero(val, default):
 
 # 01.Dhana Varga     : (CA x 8) % 12
 dhana_varga = ret_default_if_zero( (ca * 8) % 12, 12 )
-print("Dhana Varga : {0}".format(dhana_varga))
+print("Dhana Varga    : {0}".format(dhana_varga))
 
 # 02.Runa Varha      : (CA x 3) % 8
 runa_varga = ret_default_if_zero( (ca * 3) % 8, 8 )
-print("Runa Varga : {0}".format(runa_varga))
+print("Runa Varga     : {0}".format(runa_varga))
 
 # 03.Vaara Varga     : (CA x 9) % 7
 vaara_varga = ret_default_if_zero( (ca * 9) % 7, 7 )
-print("Vaara Varga : {0}".format(vaara_varga))
+print("Vaara Varga    : {0}".format(vaara_varga))
 
 # 04.Thidhi Varga    : (CA x 6) % 30
 thidhi_varga = ret_default_if_zero( (ca * 6) % 30, 30 )
-print("Thidhi Varga : {0}".format(thidhi_varga))
+print("Thidhi Varga   : {0}".format(thidhi_varga))
 
 # 05.Tatva Varga     : (CA x 3) % 5
 tatva_varga = ret_default_if_zero( (ca * 3) % 5, 5 )
-print("tatva_varga : {0}".format(tatva_varga))
+print("Tatva Varga    : {0}".format(tatva_varga))
 
 # 06.Lagna Varga     : (CA x 9) % 12
 lagna_varga = ret_default_if_zero( (ca * 9) % 12, 12 )
-print("lagna_varga : {0}".format(lagna_varga))
+print("Lagna Varga    : {0}".format(lagna_varga))
 
 # 07.Yoga Varga      : (CA x 4) % 27
 yoga_varga = ret_default_if_zero( (ca * 4) % 27, 27 )
-print("yoga_varga : {0}".format(yoga_varga))
+print("Yoga Varga     : {0}".format(yoga_varga))
 
 # 08.Graha Varga     : (CA x 5) % 9
 graha_varga = ret_default_if_zero( (ca * 5) % 9, 9 )
-print("graha_varga : {0}".format(graha_varga))
+print("Graha Varga    : {0}".format(graha_varga))
 
 # 09.Kula Varga      : (CA x 9) % 4
 kula_varga = ret_default_if_zero( (ca * 9) % 4, 4 )
-print("kula_varga : {0}".format(kula_varga))
+print("Kula Varga     : {0}".format(kula_varga))
 
 # 10.Kalaa Varga     : (CA x 12) % 16
 kalaa_varga = ret_default_if_zero( (ca * 12) % 16, 16 )
-print("kalaa_varga : {0}".format(kalaa_varga))
+print("Kalaa Varga    : {0}".format(kalaa_varga))
 
 # 11.Nakshatra Varga : (CA x 8) % 27
 nakshatra_varga = ret_default_if_zero( (ca * 8) % 27, 27 )
-print("nakshatra_varga : {0}".format(nakshatra_varga))
+print("Nakshatra Varga : {0}".format(nakshatra_varga))
 
 # 12.Aaya Varga      : (CA x 9) % 8
 aaya_varga = ret_default_if_zero( (ca*9) % 8, 8 )
-print("Aaya Varga : {0}".format(aaya_varga))
+print("Aaya Varga     : {0}".format(aaya_varga))
 
 # 13.Aayu Varga      : (CA x 9) % 120
 aayu_varga = ret_default_if_zero( (ca*9) % 120, 120 )
-print("Aayu Varga : {0}".format(aayu_varga))
+print("Aayu Varga     : {0}".format(aayu_varga))
 
 # 14.Amsha Varga     : (CA x 6) % 9
 amsha_varga = ret_default_if_zero( (ca * 6) % 9, 9 )
-print("amsha_varga : {0}".format(amsha_varga))
+print("Amsha Varga    : {0}".format(amsha_varga))
 
 # 15.Dikhpathi Varga : (CA x 9) % 8
 dikhpathi_varga = ret_default_if_zero( (ca * 9) % 8, 8 )
@@ -142,7 +154,7 @@ print("Dikhpathi Varga : {0}".format(dikhpathi_varga))
 
 # 16.Karana Varga    : (CA x 5) % 11
 karana_varga = ret_default_if_zero( (ca * 5) % 11, 11 )
-print("Karana Varga : {0}".format(karana_varga))
+print("Karana Varga    : {0}".format(karana_varga))
 
 #-- Basic Paramters are done Above
 
@@ -151,15 +163,16 @@ print("---")
 # Runa vs Dhana impact
 #
 if(runa_varga >= dhana_varga):
-	print(" Runa Varga({0}) >= Dhana Varga({1}) !!!".format
-			(runa_varga, dhana_varga) )
+    print((Fore.RED+"Runa Varga({0}) >= Dhana Varga({1}) !!!"+Fore.BLACK).
+            format(runa_varga, dhana_varga) )
 
 #
 # Thithi Varga - 
 #
-inauspicious_thidhi_list = [1, 4, 6, 8, 9, 14, 15, 16, 19, 21, 23, 29, 30]
+inauspicious_thidhi_list = [1, 15, 16, 30]
 if( thidhi_varga in inauspicious_thidhi_list):
-	print("Thidhi Varga ({0}) is Inauspicious !!!".format(thidhi_varga))
+    print((Fore.RED+"Thidhi Varga ({0}) is Inauspicious !!!"+Fore.BLACK).
+            format(thidhi_varga))
 
 
 #
@@ -178,7 +191,7 @@ vaara_list_ip = [
 
 inauspicious_vaara_list = [1, 3, 7]
 if(vaara_varga in inauspicious_vaara_list):
-	print("Vaara Varga({0}) : {1} is Inauspicious".format(
+	print((Fore.RED+"Vaara Varga({0}) : {1} is Inauspicious"+Fore.BLACK).format(
 			vaara_varga, vaara_list_ip[vaara_varga]))
 
 
@@ -217,7 +230,7 @@ yoga_list_ip = [
 	]
 inauspicious_yoga_list = [1, 6, 9, 10, 13, 15, 17, 19, 27]
 if(yoga_varga in inauspicious_yoga_list):
-	print("Yoga Varga({0}) : {1} is Inauspicious".format(
+	print((Fore.RED+"Yoga Varga({0}) : {1} is Inauspicious"+Fore.BLACK).format(
 			yoga_varga, yoga_list_ip[yoga_varga]))
 
 
@@ -235,23 +248,23 @@ aaya_varga_ip = [
         "Gajaya", #7
         "Kakaya"
         ]
-print("Aaya Varga({0}) is  {1}".format(aaya_varga, 
+print("Aaya Varga({0}) is {1}".format(aaya_varga, 
                                 aaya_varga_ip[aaya_varga]))
 
 #
 inauspicious_aaya_list = [2, 4, 6, 8]
 auspicious_aaya_list = [1,5]
 if( aaya_varga in inauspicious_aaya_list):
-	print("Aaya Varga ({0}) is Inauspicious !!!".format(aaya_varga))
+	print((Fore.RED+"Aaya Varga ({0}) is Inauspicious !!!"+Fore.BLACK).format(aaya_varga))
 elif( aaya_varga in auspicious_aaya_list):
-	print("Aaya Varga({0}) is Very Auspicious !!!".format(aaya_varga))
+	print((Fore.GREEN+"Aaya Varga({0}) is Very Auspicious !!!"+Fore.BLACK).format(aaya_varga))
 
 #
 # Aayu Varga
 #
 
 if(aayu_varga < 60):
-	print("Aayu Varga ({0}) < 60 !!!".format(aaya_varga))
+	print((Fore.RED+"Aayu Varga ({0}) < 60 !!!"+Fore.BLACK).format(aaya_varga))
 
 
 #
@@ -322,10 +335,7 @@ karana_varga_ip = [
 auspicious_karana_varga = [ 1, 2, 3, 4 ]
 
 if(karana_varga not in auspicious_karana_varga):
-    print("Karana Varaga({0}) is inauspicious !!!".
+    print((Fore.RED+"Karana Varaga({0}) is inauspicious !!!"+Fore.BLACK).
             format(karana_varga_ip[karana_varga]))
-
-
-
 
 
