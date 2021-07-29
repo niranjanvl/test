@@ -14,7 +14,7 @@ epics = {
          "ramayana" : "Rama, Sita, Bharata, Lakshmana, Shatrugna, Hanuma",
          "mahabharata" : "Krishna, Pandavas, Kauravas, Bhishma, ...",
          "bhagavatam" : "Devaki, Vasudeva, Krishna, Balarama, Kamsa, Gadendra, ..."
-       }
+        }
 
 while True:
     print >>sys.stderr, 'waiting for a connection'
