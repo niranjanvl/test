@@ -13,6 +13,7 @@ import random    #used for random number generation
 DEFAULT_KEY = 121314151   #use when no key is supplied
 
 '''
+-encode 
 Encoding : Add the key to the plain text
            Cipher = Plain + Key
 '''
@@ -23,6 +24,7 @@ def encode(plain, key):
     return cipher
 
 '''
+-decode
 Decoding : Subtract the key from the Cipher text
            Plain = Cipher - Key
 '''
@@ -32,10 +34,12 @@ def decode(cipher, key):
         plain.append(chr(c - key))
     return ''.join(plain)
 
+#do argument validation
 if(len(sys.argv) < 3):
     print("Usage:\n\tcrypter.py <encode> <file path> [key:integer]")
     exit(0)
 
+#process arguments
 action = sys.argv[1].upper()
 filepath = sys.argv[2]
 okey = DEFAULT_KEY
@@ -48,8 +52,8 @@ file = open(filepath, "r")
 in_data = file.read()
 file.close()
 
-out_data = None
-out_file_path = None
+out_data = None         #temporary variable to store the result
+out_file_path = None    #variable to hold the output file name
 
 '''
 Doing encoding or decoding as per the arguments
@@ -63,7 +67,7 @@ if(action == 'ENCODE'):
     Store the random part as the first element in the result
       so that it can used again during the decoding.
     '''
-    #generate a randome number
+    #generate a random number
     rnd = random.randint(1,100000)
 
     #add the rnd to the original key and use the sum as the key
