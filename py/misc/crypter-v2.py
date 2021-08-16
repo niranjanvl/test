@@ -20,7 +20,10 @@ Encoding : Add the key to the plain text
 def encode(plain, key):
     cipher = []
     for c in plain:
-        cipher.append(ord(c) + key)
+        ct = (ord(c) + key)
+        cipher.append(ct)
+        #update the key
+        key = key + ord(c)
     return cipher
 
 '''
@@ -31,7 +34,10 @@ Decoding : Subtract the key from the Cipher text
 def decode(cipher, key):
     plain = []
     for c in cipher:
-        plain.append(chr(c - key))
+        pt = (chr(c - key))
+        plain.append(pt)
+        #update the key
+        key  = key + ord(pt)
     return ''.join(plain)
 
 #do argument validation
@@ -66,6 +72,24 @@ if(action == 'ENCODE'):
 
     Store the random part as the first element in the result
       so that it can used again during the decoding.
+
+    Use the random key to encrypt the first byte,
+        Use the first result as the key-delta to encrypt the second byte,
+        Use the sencond result as the key-delta to encrypt the third byte,
+        ...
+        Use the n'th result as the key-delta to encrypt the (n+1)the byte.
+
+      enc('a', r) = x
+      enc('a', r) = x
+      enc('a', r) = x
+        i.e, enc('aaa') = 'xxx'
+        -----
+      enc('a', r) = x
+      enc('a', x) = y
+      enc('a', y) = z
+        i.e, enc('aaa') = 'xyz'
+
+
     '''
     #generate a random number
     rnd = random.randint(1,100000)
