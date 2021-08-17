@@ -20,10 +20,10 @@ Encoding : Add the key to the plain text
 def encode(plain, key):
     cipher = []
     for c in plain:
-        ct = (ord(c) + key)
+        ct = (ord(c) ^ key)
         cipher.append( ct )
         #update the key
-        key = key + ord(c)
+        key = key ^ ct
     return cipher
 
 '''
@@ -34,10 +34,10 @@ Decoding : Subtract the key from the Cipher text
 def decode(cipher, key):
     plain = []
     for c in cipher:
-        pt = (chr(c - key))
+        pt = (chr(c ^ key))
         plain.append(pt)
         #update the key
-        key  = key + ord(pt)
+        key  = key ^ c
     return ''.join(plain)
 
 #do argument validation
