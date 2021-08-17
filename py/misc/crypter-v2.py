@@ -21,7 +21,7 @@ def encode(plain, key):
     cipher = []
     for c in plain:
         ct = (ord(c) + key)
-        cipher.append(ct)
+        cipher.append( ct )
         #update the key
         key = key + ord(c)
     return cipher
