@@ -1,0 +1,122 @@
+1. How is a Programming Language different from Natural Language ?
+
+2. Types of Programming Languages.
+    2GL, 3GL, 4GL, ...
+    Compiled, Interpreted.
+    Strongly Typed, Loosely Typed
+    General Purpose (C, Java), Special Purpose (LISP, PROLOG, COBOL)
+
+3. How is an Interpreted Languange different from Compiled ?
+
+4. Constants, Variables.
+
+5. Whats the different between a Constant and Variable
+
+6. Types of values
+    Numbers  - Integers, Real, Complex
+    Strings 
+    Boolean
+
+7. Operations and Operands
+    Binary Operators
+      Arithmetic
+        1 + 2  : Addition
+        1 - 2  : Subtraction
+        1 / 2  : Division
+        1 * 2  : Multiplication
+        1 ** 2 : Exponentiation  (power)
+        1 % 2  : Modulus
+
+     Boolean
+        True and False : AND  ( Conjunction )
+        True or False  : OR   ( Disjunction )
+
+    
+      -1     : Unary Operators
+    not True : Unary Operator  (negation)
+
+8. Wroting a program using A file vs in the Shell.
+
+9. Bolean Algebra
+    {True, False}
+
+    False : 0, True : 1
+
+    Operators :
+        and
+        or
+        not
+
+    and (Conjunction) :
+      --------+-----------+-----------
+          X        Y         X and Y
+      --------+-----------+-----------
+       True      True       True
+       True      False      False
+       False     True       False
+       False     False      False
+      --------+-----------+-----------
+
+     or (Disjunction) :
+      --------+-----------+-----------
+          X        Y         X or Y
+      --------+-----------+-----------
+       True      True       True
+       True      False      True
+       False     True       True
+       False     False      False
+      --------+-----------+-----------
+
+     not (Negation)
+      --------+-----------
+          X        not X
+      --------+-----------
+       True      False     
+       False     True     
+
+    xor (Exclusive OR) :
+      --------+-----------+-----------
+          X        Y         X xor Y
+      --------+-----------+-----------
+       True      True       False
+       True      False      True
+       False     True       True
+       False     False      False
+      --------+-----------+-----------
+
+    (Universal Gates)
+    nand  : not (and)
+     nor  : not (or)
+
+
+    nor(X,Y) : not( X or Y ) : (not X) and (not Y)
+
+     nor  :
+      --------+-----------+---------+--------------+-------------------------
+          X        Y         X or Y    not(X or Y)    (not X) and (not of Y)
+      --------+-----------+---------+--------------+-------------------------
+       True      True       True       False          False and False : False
+       True      False      True       False          False and True  : False
+       False     True       True       False          True  and False : False
+       False     False      False      True           True  and True  : True
+      --------+-----------+---------+--------------+-------------------------
+
+    nand(X,Y) : not( X and Y ) : (not X) or (not Y)
+     nand  :
+      --------+-----------+---------+--------------+-------------------------
+          X        Y        X and Y   not(X and Y)    (not X) or (not of Y)
+      --------+-----------+---------+--------------+-------------------------
+       True      True       True       False          False or False : False
+       True      False      False      True           False or True  : True
+       False     True       False      True           True  or False : True
+       False     False      False      True           True  or True  : True
+      --------+-----------+---------+--------------+-------------------------
+
+
+    
+
+
+
+
+
+
