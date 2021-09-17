@@ -21,6 +21,14 @@ T F : T
 F T : T
 F F : F
 
+xor : (X and !Y) or (!X and Y)
+
+nor : not(X or Y)
+    : (not X) and (not Y)
+
+nand : not(X and Y)
+     : (not X) or (not Y)
+
 ... etc.
 
 '''
