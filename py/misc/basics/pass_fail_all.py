@@ -58,7 +58,7 @@ else:
 
 
 '''
-
+oveall_pass = True
 for marks in marks_list:
     if(marks >= 85):
         print("Distinction")
@@ -70,6 +70,15 @@ for marks in marks_list:
         print("Third Class")
     else:
         print("Fail")
+
+#TODO : Find out Pass / Fail overall.
+#       Calculate the correct oveall_pass
+if(oveall_pass):
+    print("Oveall Result : Pass")
+else:
+    print("Oveall Result : Fail")
+
+
 
 
 
