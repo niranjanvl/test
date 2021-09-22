@@ -74,7 +74,7 @@
        True      False     
        False     True     
 
-    xor (Exclusive OR) :
+    xor (Exclusive OR) :  (X and (not Y)) or ((not X) and Y)
       --------+-----------+-----------
           X        Y         X xor Y
       --------+-----------+-----------
@@ -112,9 +112,61 @@
        False     False      False      True           True  or True  : True
       --------+-----------+---------+--------------+-------------------------
 
-
+ or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y) or ((not X) and Y)
     
 
+
+10.Conditions and Branching
+
+
+-----------
+  if (logical expression) :
+    Processing
+
+
+-----------
+  if (logical expression) :
+    Processing
+  else:
+    Alternative Processing
+
+-----------
+  if(condition1):
+    Processing1
+  elif (condition2):
+    Processing2
+  elif (condition3):
+    Processing3
+  else:
+    CatchAll
+
+
+11. Iterations / Loops
+
+    Use same procesing on multiple instances of the data.
+    Logic is same, data changes - so the result changes in each titeration.
+
+    english = 35
+    hindi   = 90
+    kannada = 60
+    science = 60
+    maths   = 80
+    social  = 70
+---
+    evaluate(english)
+    evaluate(hindi)
+    ...
+    evaluate(maths)
+    evaluate(social)
+--- 
+    for each subject:
+        evalueate(subject)
+
+
+
+
+
+   
 
 
 
