@@ -16,48 +16,6 @@ import sys
 marks_list = [int(x) for x in sys.argv[1:]]
 #print(marks_list)
 
-'''
----- process marks in subject 1
-marks = marks_list[0])
-if(marks >= 85):
-    print("Distinction")
-elif (marks >= 60):
-    print("First Class")
-elif (marks >= 50):
-    print("Second Class")
-elif (marks >= 35):
-    print("Third Class")
-else:
-    print("Fail")
-
----- process marks in subject 2
-marks = marks_list[1])
-if(marks >= 85):
-    print("Distinction")
-elif (marks >= 60):
-    print("First Class")
-elif (marks >= 50):
-    print("Second Class")
-elif (marks >= 35):
-    print("Third Class")
-else:
-    print("Fail")
-
----- process marks in subject 3
-marks = marks_list[2])
-if(marks >= 85):
-    print("Distinction")
-elif (marks >= 60):
-    print("First Class")
-elif (marks >= 50):
-    print("Second Class")
-elif (marks >= 35):
-    print("Third Class")
-else:
-    print("Fail")
-
-
-'''
 oveall_pass = True
 pass_count = 0
 fail_count = 0
