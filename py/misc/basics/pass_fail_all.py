@@ -14,7 +14,7 @@ Also print the Grade if Pass
 import sys
 
 marks_list = [int(x) for x in sys.argv[1:]]
-print(marks_list)
+#print(marks_list)
 
 '''
 ---- process marks in subject 1
@@ -59,24 +59,34 @@ else:
 
 '''
 oveall_pass = True
+pass_count = 0
+fail_count = 0
+average = 0
 for marks in marks_list:
+    print(marks)
     if(marks >= 85):
-        print("Distinction")
+        print(" -Distinction")
     elif (marks >= 60):
-        print("First Class")
+        print(" -First Class")
     elif (marks >= 50):
-        print("Second Class")
+        print(" -Second Class")
     elif (marks >= 35):
-        print("Third Class")
+        print(" -Third Class")
     else:
-        print("Fail")
+        print(" -Fail")
+        oveall_pass = False
 
 #TODO : Find out Pass / Fail overall.
 #       Calculate the correct oveall_pass
 if(oveall_pass):
     print("Oveall Result : Pass")
 else:
-    print("Oveall Result : Fail")
+    print("Oveall Result : Fail.") 
+    print(pass_count)
+    print(" -Number of Subjects Cleared.")
+    print(fail_count)
+    print(" -Number of subjects Failed.")
+    #TODO : Print Average
 
 
 
