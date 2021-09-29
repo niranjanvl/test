@@ -15,12 +15,17 @@ import sys
 
 marks_list = [int(x) for x in sys.argv[1:]]
 #print(marks_list)
-
+num_subjects = 0
 oveall_pass = True
 pass_count = 0
 fail_count = 0
 average = 0
+total_marks = 0
+
+#Iterate over the the marks list. 
 for marks in marks_list:
+
+    passMark = True
     print(marks)
     if(marks >= 85):
         print(" -Distinction")
@@ -33,8 +38,18 @@ for marks in marks_list:
     else:
         print(" -Fail")
         oveall_pass = False
+        passMark = False
 
-#TODO : Find out Pass / Fail overall.
+    total_marks = total_marks + marks
+    if(passMark):
+        pass_count = pass_count + 1
+    else:
+        fail_count = fail_count + 1
+
+num_subjects = pass_count + fail_count
+average = total_marks / num_subjects
+
+#Find out Pass / Fail overall.
 #       Calculate the correct oveall_pass
 if(oveall_pass):
     print("Oveall Result : Pass")
@@ -44,7 +59,14 @@ else:
     print(" -Number of Subjects Cleared.")
     print(fail_count)
     print(" -Number of subjects Failed.")
-    #TODO : Print Average
+    print(num_subjects)
+    print(" -Number of Subjects.")
+    print(total_marks)
+    print(" -Total Marks.")
+    print(average)
+    print(" -Average Mark.")
+
+
 
 
 
