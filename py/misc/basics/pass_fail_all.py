@@ -21,6 +21,8 @@ pass_count = 0
 fail_count = 0
 average = 0
 total_marks = 0
+average_pass_mark = 0
+average_fail_mark = 0
 
 #Iterate over the the marks list. 
 for marks in marks_list:
@@ -65,6 +67,10 @@ else:
     print(" -Total Marks.")
     print(average)
     print(" -Average Mark.")
+    print(average_pass_mark)
+    print(" -Average Pass Mark.")
+    print(average_fail_mark)
+    print(" -Average Fail Mark.")
 
 
 
