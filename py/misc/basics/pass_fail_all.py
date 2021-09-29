@@ -22,7 +22,9 @@ fail_count = 0
 average = 0
 total_marks = 0
 average_pass_mark = 0
+total_pass_marks = 0
 average_fail_mark = 0
+total_fail_marks = 0
 
 #Iterate over the the marks list. 
 for marks in marks_list:
@@ -42,14 +44,18 @@ for marks in marks_list:
         oveall_pass = False
         passMark = False
 
-    total_marks = total_marks + marks
+    total_marks += marks
     if(passMark):
-        pass_count = pass_count + 1
+        pass_count +=  1
+        total_pass_marks += marks
     else:
-        fail_count = fail_count + 1
+        fail_count += 1
+        total_fail_marks += marks
 
 num_subjects = pass_count + fail_count
 average = total_marks / num_subjects
+average_pass_mark = total_pass_marks / pass_count
+average_fail_mark = total_fail_marks / fail_count
 
 #Find out Pass / Fail overall.
 #       Calculate the correct oveall_pass
@@ -71,12 +77,5 @@ else:
     print(" -Average Pass Mark.")
     print(average_fail_mark)
     print(" -Average Fail Mark.")
-
-
-
-
-
-
-
 
 
